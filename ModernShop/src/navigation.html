@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>关于当代</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <style>
+        body{
+            background-color:  #330a2c;
+        }
+        .nav-left{
+            height: 100px;
+        }
+        .nav-card{
+            margin-top: 120px;
+            margin-left: 100px;
+            width: 750px;
+            height: 350px;
+            background: url(./imgs/server-animate-bg.jpg) no-repeat;
+            background-size: 100% 100%;
+            margin-bottom: 50px;
+        }
+        .nav-box{
+            position: relative;
+            width: 750px;
+            height: 350px;
+            margin: 5px;
+        }
+        .box{
+            position: absolute;
+            border-radius: 5px;
+            width: 75px;
+            height: 45px;
+        }
+        .box a{
+            color: #fff;
+            font-size: 14px;
+            display: inline-block;
+            width: 75px;
+            height: 45px;
+            line-height: 20px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0px 0px 2px 3px #330a2c;
+        }
+        #boxlist{
+            background: url(./imgs/server-box-bg.png) no-repeat -88px -4px;
+        }
+        .anilist{
+            background: url(./imgs/server-box-bg.png) no-repeat -8px -4px;
+            box-shadow: 0px 0px 2px 3px #330a2c;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="wrap clearfix">
+        <header id="header"></header>
+        <div class="maincontent clearfix">
+            <section class="nav-left" id="sidebar">
+                <div class="nav-title">
+                        <h4>服务导航</h4>
+                        <h4>Service Navigation</h4>
+                </div>
+            </section>
+            <section class="nav-card">
+                <div class="nav-box"></div>
+            </section>
+        </div>
+        <footer id="footer"></footer>
+    </div>
+    <script src="./js/animation.js"></script>
+    <script type="text/javascript">
+        $("#header").load("./common/header.html");
+        $("#footer").load("./common/footer.html");
+    </script>
+</body>
+</html>

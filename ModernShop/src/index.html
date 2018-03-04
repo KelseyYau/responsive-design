@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>当代商城</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <style>
+        body{
+            background-color:  #330a2c;
+            /* background: url("./imgs/bg.jpg") no-repeat; */
+        }
+        @keyframes bgimg{
+            0%{
+                background-image: url(./imgs/bg.jpg);
+            }
+            50%{
+                background-image: url(./imgs/flag-bg.jpg);
+            }
+            100%{
+                background-image: url(./imgs/step2-bg.jpg);
+            }
+        }
+        @-webkit-keyframes bgimg{
+            0%{
+                background-image: url(./imgs/bg.jpg);
+            }
+            50%{
+                background-image: url(./imgs/flag-bg.jpg);
+            }
+            100%{
+                background-image: url(./imgs/step2-bg.jpg);
+            }
+        }
+        @-moz-keyframes bgimg{
+            0%{
+                background-image: url(./imgs/bg.jpg);
+            }
+            50%{
+                background-image: url(./imgs/flag-bg.jpg);
+            }
+            100%{
+                background-image: url(./imgs/step2-bg.jpg);
+            }
+        }
+        @keyframes sidebarmove {
+            0%{
+                display: none;
+                left: -1000px;
+                top: -150px;
+            }
+            50%{
+                display: block;
+                left: -1000px;
+                top: 170px;
+            }
+            100%{
+                display: block;
+                left: -1000px;
+                top: 300px;
+            }
+        }
+        @keyframes txten {
+            0%{
+                display: none;
+                left: 300px;
+                top: 300px;
+            }
+            100%{
+                display: block;
+                left: -300px;
+                top: 300px;
+            }
+        }
+        @keyframes txtcn {
+            0%{
+                display: none;
+                left: 400px;
+                top: 340px;
+            }
+            100%{
+                display: block;
+                left: -300px;
+                top: 340px;
+            }
+        }
+        .wrap{
+            margin: 0 auto;
+            width: 1060px;
+            height: 780px;
+            background:url(./imgs/bg.jpg)  no-repeat;
+            background-size: 100% 100%;
+            animation: bgimg 2s ease-in forwards;
+            -webkit-animation: bgimg 4s ease-in forwards;
+            -moz-animation: bgimg 4s ease-in forwards;
+        }
+        .content{
+            float: left;
+            height: 650px;
+            position: relative;
+        }
+        .content .box{
+            transform-style: preserve-3d;
+            perspective: 800px;
+            position: absolute;
+            left: -650px;
+            top: 100px;
+        }
+        .imgbox{
+            width: 250px;
+            height: 250px;
+            margin: 160px auto;
+            position: relative;
+            transform-style: preserve-3d;
+            transform:rotateX(30deg) rotateY(-45deg);
+        }
+        .content .imgbox .cube{
+            width: 250px;
+            height: 250px;
+            position: absolute;
+            background: url(./imgs/box.png) no-repeat;
+            background-size: 100% 100%;
+        }
+        .content .imgbox .cube:hover{
+            background: url(./imgs/box-hover.png) no-repeat;
+            background-size: 100% 100%;
+        }
+        .leftside{
+           transform:rotateY(90deg) translateZ(-125px);
+        }
+        .rightside{
+            transform:rotateY(90deg) translateZ(125px);
+        }
+    
+        .topside{
+            transform:rotateX(90deg) translateZ(125PX) rotateZ(360deg);
+        }
+        .bottomside{
+            transform:rotateX(-90deg) translateZ(125PX) rotateZ(180deg);
+        }
+        .backside{
+            transform:rotateX(180deg) translateZ(125px) rotateZ(180deg); 
+        }
+        .frontside{
+            transform:  translateZ(125px);
+        }
+
+        .sidebar{
+            position: absolute;
+            z-index: 1;
+            left: -1000px;
+            top: 300px;
+            animation: sidebarmove 3s linear forwards;
+            -webkit-animation: sidebarmove 3s linear forwards;
+            -moz-animation: sidebarmove 3s linear forwards;
+        }
+        .sidebar .sidebarmenu a{
+            padding-left: 5px;
+            display: inline-block;
+            width: 130px;
+            height: 25px;
+            line-height: 25px;
+            background: #C25896;
+            color: #fff;
+            font-size: 15px;
+            text-decoration: none;
+            margin-top: 2px;
+            text-shadow: 0.1em 0.1em 0.2em black;
+            z-index: 3;
+        }
+        .sidebar .sidebarmenu a span{
+            margin-right: 5px;
+            float: right;
+        }
+        .sidebarsv{
+            margin-top: 30px;
+            width: 130px;
+            height: 48px;
+            background: url(./imgs/server.png) no-repeat;
+        }
+        .texten{
+            position: absolute;
+            width: 267px;
+            height: 32px;
+            background: url(./imgs/text-en.png) no-repeat;
+            left: -300px;
+            top: 300px;
+            animation: txten 2s linear forwards;
+            -webkit-animation: txten 2s linear forwards;
+            -moz-animation: txten 2s linear forwards;
+        }
+        .textcn{
+            position: absolute;
+            width: 228px;
+            height: 20px;
+            background: url(./imgs/text-cn.png) no-repeat;
+            left: -300px;
+            top: 340px;
+            animation: txtcn 2s linear forwards;
+            -webkit-animation: txtcn 2s linear forwards;
+            -moz-animation: txtcn 2s linear forwards;
+        }
+        .boxpresen1{
+            position: absolute;
+            width: 125px;
+            height: 46px;
+            background: url(./imgs/text-our.png) no-repeat;
+            left: -300px;
+            top: 340px;
+            display: none;
+        }
+        .boxpresen2{
+            position: absolute;
+            width: 125px;
+            height: 46px;
+            background: url(./imgs/text-our.png) no-repeat 0 -45px;
+            left: -862px;
+            top: 261px;
+            display: none;
+        }
+        .boxpresen3{
+            position: absolute;
+            width: 125px;
+            height: 46px;
+            background: url(./imgs/text-our.png) no-repeat 0 -90px;
+            left: -767px;
+            top: 528px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- [if lte IE8]>
+    <P class="browserupgrade">你的浏览器版本过低，请到<a  href="http://browsehappy.osfipin.com/">这里更新</a>,以获得最佳体验</p>
+    <![endif] -->
+    <div class="wrap" id="wrappage">
+        <header id="header">
+           
+        </header>
+        
+        <section class="content">
+            <div class="sidebar">
+                <ul class="sidebarmenu">
+                    <li><a href="#">当代商城<span>></span></a></li>
+                    <li><a href="#">当代商城鼎城店<span>></span></a></li>
+                    <li><a href="#">当代网上商城<span>></span></a></li>
+                    <li><a href="#">当代微博<span>></span></a></li>
+                </ul>
+                <div class="sidebarsv">
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgbox">
+                    <div class="cube leftside" id="left"></div>
+                    <div class="cube rightside" id="right"></div>
+                    <div class="cube topside" id="top"></div>
+                    <div class="cube bottomside" id="bottom"></div>
+                    <div class="cube backside" id="back"></div>
+                    <div class="cube frontside" id="front"></div>
+                </div>
+            </div>
+            <div class="texten"></div>
+            <div class="textcn"></div>
+            <div class="boxpresen1"></div>
+            <div class="boxpresen2"></div>
+            <div class="boxpresen3"></div>
+        </section>
+        <footer id="footer">
+            
+        </footer>
+    </div>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/index.js"></script>
+    <script>
+        $("#header").load("./common/header.html");
+        $("#footer").load("./common/footer.html");
+    </script>
+</body>
+</html>

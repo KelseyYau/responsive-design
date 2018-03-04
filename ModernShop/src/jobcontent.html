@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>关于当代</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <style>
+        body{
+            background-color:  #330a2c;
+        }
+        .wrap{
+            position: relative;
+            background:url(./imgs/page-bg.jpg) no-repeat;
+            background-size: 100% 100%;
+            width: 1060px;
+            margin: 0 auto;
+        }
+        .info{
+            float: left;
+            width: 528px;
+            height: 500px;
+            margin-left: 100px;
+        }
+        .maincontent{
+            float: left;
+            width: 1060px;
+            margin-top: 100px;
+        }
+        .carousel-title{
+            width: 486px;
+            height: 36px;
+            background: url(./imgs/content-tab-bg.png) no-repeat;
+            background-size: 100% 100%;
+        }
+        .carousel-title span{
+            display: inline-block;
+            margin-left: 40px;
+            color: #fff;
+        }
+        .applyjob{
+            display: inline-block;
+            margin-left: 210px;
+            width: 80px;
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid #996492;
+            background-color: #2D043e;
+            color: #996492;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div class="wrap clearfix">
+        <header id="header"></header>
+        <div class="maincontent clearfix">
+            <section class="nav-left" id="sidebar"></section>
+            <section class="info">
+                <div class="carousel-title"><span>人才招聘</span></div>  
+                <div class="jobcontent">
+                    <p id="content-txt"></p>
+                </div>
+                <a href="./jobapply.html" class="applyjob">在线申请</a>
+            </section>
+            <section class="right-content"></section>
+        <footer id="footer"></footer>
+    </div>
+
+    <script type="text/javascript">
+        $("#header").load("./common/header.html");
+        $("#footer").load("./common/footer.html");
+        $("#sidebar").load("./common/sidebar.html");
+        $.ajax({
+            url: './txt/人才招聘详细.txt',
+            dataType: 'text',
+            type:'GET',
+            success: function(data) {
+            console.log(data);
+            $('#content-txt').html(data.replace(/\r\n/ig,'</br>')).css('color','#fff');
+            }
+        });
+    </script>
+</body>
+</html>

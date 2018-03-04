@@ -1,0 +1,77 @@
+.wrap{
+    position: relative;
+    background:url(../imgs/page-bg.jpg) no-repeat;
+    background-size: 100% 100%;
+    width: 1060px;
+    margin: 0 auto;
+}
+.info{
+    float: left;
+    width: 528px;
+    height: 500px;
+    margin-left: 100px;
+}
+.maincontent{
+    float: left;
+    width: 1060px;
+    margin-top: 100px;
+}
+.carousel-title{
+    width: 486px;
+    height: 36px;
+    background: url(../imgs/content-tab-bg.png) no-repeat;
+    background-size: 100% 100%;
+}
+.carousel-title span{
+    display: inline-block;
+    margin-left: 40px;
+    color: #fff;
+}
+.right-content{
+    float: left;
+    margin-left: 50px;
+}
+.magazine{
+    position: relative;
+    width: 153px;
+    height: 168px;
+    background: url(../imgs/ad-bg.jpg) no-repeat;
+}
+.magazine .paper{
+    width: 70px;
+    height: 95px;
+    background: url(../imgs/paper.jpg) no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 50px;
+    left: 7px;
+}
+.magazine .papernow{
+    display: inline-block;
+    font-size: 14px;
+    position: absolute;
+    right: 1px;
+    top: 50px;
+    width: 75px;
+    color: blueviolet;
+    text-decoration: none;
+}
+.magazine span{
+    display: inline-block;
+    font-size: 14px;
+    position: absolute;
+    right: 1px;
+    top: 80px;
+    width: 75px;
+    color: #fff;
+}
+.magazine .paperbefore{
+    display: inline-block;
+    font-size: 14px;
+    position: absolute;
+    right: 1px;
+    top: 130px;
+    width: 75px;
+    color: blueviolet;
+    text-decoration: none;
+}

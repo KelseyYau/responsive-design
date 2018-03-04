@@ -1,0 +1,47 @@
+/*这个是保留的*/
+h1 {
+  color: #ff7f50;
+}
+h3 {
+  color: #888888;
+}
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  border: solid 5px pink;
+}
+.border {
+  border: solid 5px pink;
+}
+.test_mixin {
+  border: solid yellow 30px;
+}
+.triangle {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  border-width: 10px;
+  border-color: transparent transparent red transparent;
+  border-style: solid;
+}
+.box_02 {
+  width: 320px;
+}
+.list {
+  width: 600px;
+  margin: 30px auto;
+  padding: 0;
+  list-style: none;
+}
+.list li {
+  height: 30px;
+  line-height: 30px;
+  background-color: #ccc;
+}
+.list a {
+  float: left;
+}
+.list a:hover {
+  color: red;
+}

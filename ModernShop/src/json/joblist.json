@@ -1,0 +1,12 @@
+{
+  "obj":[
+    {"jobname":"文案策划专员","department":"商品运营部"},
+    {"jobname":"电工","department":"物业部"},
+    {"jobname":"治安员","department":"保卫部"},
+    {"jobname":"营销专员","department":"商品运营部"},
+    {"jobname":"车场礼宾员","department":"保卫部"},
+    {"jobname":"收银员","department":"商品管理部"},
+    {"jobname":"理货员","department":"商品管理部"},
+    {"jobname":"总台服务员","department":"商品管理部"}
+  ]
+}

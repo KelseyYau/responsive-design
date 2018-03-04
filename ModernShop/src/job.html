@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>关于当代</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <style>
+        body{
+            background-color:  #330a2c;
+        }
+        .wrap{
+            position: relative;
+            background:url(./imgs/page-bg.jpg) no-repeat;
+            background-size: 100% 100%;
+            width: 1060px;
+            margin: 0 auto;
+        }
+        .info{
+            float: left;
+            width: 528px;
+            height: 500px;
+            margin-left: 100px;
+        }
+        .maincontent{
+            float: left;
+            width: 1060px;
+            margin-top: 100px;
+        }
+        .carousel-title{
+            width: 486px;
+            height: 36px;
+            background: url(./imgs/content-tab-bg.png) no-repeat;
+            background-size: 100% 100%;
+        }
+        .carousel-title span{
+            display: inline-block;
+            margin-left: 40px;
+            color: #fff;
+        }
+
+        #joblist-tit{
+            width: 520px;
+            height: 36px;
+            background-color: #370a2b;
+        }
+        .list1,.list2{
+            display: inline-block;
+            width: 220px;
+            height: 36px;
+            color: #fff;
+            line-height: 36px;
+            font-size: 14px;
+
+        }
+        #list-content li{
+            display: inline-block;
+            width: 520px;
+        }
+        #list-content li>a{
+            text-decoration: none;
+            color: #fff;
+            font-size: 14px;
+        }
+        #list-content li>a:hover{
+            color: #370a2b;
+        }
+    </style>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div class="wrap clearfix">
+        <header id="header"></header>
+        <div class="maincontent clearfix">
+            <section class="nav-left" id="sidebar"></section>
+            <section class="info">
+                <div class="carousel-title"><span>人才招聘</span></div>  
+                <div class="joblist" id="joblist">
+                    <div id="joblist-tit"><span class="list1">职位名称</span><span class="list2">所属部门</span></div>
+                    <ul id="list-content">
+                    </ul>
+                </div>
+            </section>
+            <section class="right-content"></section>
+        <footer id="footer"></footer>
+    </div>
+
+    <script type="text/javascript">
+        $("#header").load("./common/header.html");
+        $("#footer").load("./common/footer.html");
+        $("#sidebar").load("./common/sidebar.html");
+        $(function(){
+            $.getJSON("./json/joblist.json",function(data){
+                console.log(data.obj[0].jobname);
+                for(var i = 0;i < data.obj.length;i++){
+                    var lilist = "";
+                    lilist += '<li><span class="list1">';
+                    lilist += data.obj[i].jobname + '</span><span class="list2">';
+                    lilist += data.obj[i].department + '</span><a href="./jobcontent.html" class="list3">查看详情</a></li>'
+                    $("#list-content").append(lilist);
+                    console.log(lilist);
+                }
+            })
+        })
+    </script>
+</body>
+</html>

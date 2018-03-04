@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>关于当代</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <!-- <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <!-- <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <style>
+        body{
+            background-color: #330a2c;
+        }
+        .wrap{
+            background:url(./imgs/page-bg.jpg) no-repeat;
+            background-size: 100% 100%;
+        }
+        .info{
+            margin-left: 70px;
+        }
+        .hide{
+            display: none;
+        }
+        .tab{
+            width: 528px;
+            height: 411px;
+            margin: 0px auto;
+        }
+        .tabTitle{
+            background: -webkit-linear-gradient(left,rgb(168, 40, 153),rgba(255, 0, 225, 0)); /* Safari 5.1 - 6 */
+            background: -o-linear-gradient(right,rgba(168, 40, 153),rgba(255,0,0,0)); /* Opera 11.1 - 12*/
+            background: -moz-linear-gradient(right,rgba(168, 40, 153),rgba(255,0,0,0)); /* Firefox 3.6 - 15*/
+            background: linear-gradient(right, rgba(168, 40, 153), rgba(255,0,0,0)); /* 标准的语法 */
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 3px rgb(168, 40, 153,0.5);
+        }
+        .tabTitle ul{
+            overflow: hidden;
+        }
+        .tabTitle ul li{
+            margin: 5px;
+            padding: 2px;
+            color: #fff;
+            height: 30px;
+            display: inline-block;
+            line-height: 30px;
+        }
+        .tabTitle ul li:hover{
+            cursor: pointer;
+        }
+        .active{
+            background:rgb(190, 20, 170,0.7);
+            border-radius: 5px;
+            color:#fff;
+            box-shadow: 0px 0px 5px 2px #2D043E;
+        }
+        .tabContent{margin-top: 30px;}
+        .tabContent div{ width: 528px; height: 381px; }
+        .tabContent div:first-child{
+            background: url(./imgs/map1.jpg);
+        }
+        .tabContent div:nth-child(2){
+            background: url(./imgs/map2.jpg);
+        }
+        .right-content{
+            width: 200px;
+            height: 800px;
+            float: left;
+        }
+    </style>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div class="wrap clearfix">
+        <header id="header"></header>
+        <div class="maincontent clearfix">
+            <section class="nav-left" id="sidebar"></section>
+            <section class="info">
+                <div class="tab">
+                    <div class="tabTitle">
+                        <ul>
+                            <li class="active">当代商城</li>
+                            <li>当代商城鼎城店</li>
+                            <li>当代网上商城</li>
+                        </ul>
+                    </div>
+                    <div class="tabContent">
+                        <div></div>
+                        <div class="hide"></div>
+                        <div class="hide"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="right-content">
+                <div class="magazine">
+                    <div class="paper"></div>
+                    <a href="javascript:void(0)" class="papernow">2016 第4期</a>
+                    <span>当代人2016第四期</span>
+                    <a href="javascript:void(0)" class="paperbefore">往期查看</a>
+                </div>
+            </section>
+        </div>
+        
+        <footer id="footer"></footer>
+    </div>
+    <script type="text/javascript">
+        $("#header").load("./common/header.html");
+        $("#footer").load("./common/footer.html");
+        $("#sidebar").load("./common/sidebar.html");
+        
+        //tab page
+        var tabli = $('.tabTitle ul li');
+        var tabDiv = $('.tabContent div');
+        var timeId = null;
+        tabli.click(function(){
+            var _this = $(this);
+            timeId = setTimeout(function(){
+                _this.addClass('active').siblings().removeClass('active');
+                var index = _this.index();
+                tabDiv.eq(index).show().removeClass().siblings().hide();
+            },300);
+        }).mouseup(function(){
+            clearTimeout(timeId);
+        });
+    </script>
+</body>
+</html>

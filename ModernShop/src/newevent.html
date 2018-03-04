@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>关于当代</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <style>
+        body{
+            background-color: #330a2c;
+        }
+        .wrap{
+            position: relative;
+            background:url(./imgs/page-bg.jpg) no-repeat;
+            background-size: 100% 100%;
+            width: 1060px;
+            margin: 0 auto;
+        }
+        .info{
+            float: left;
+            width: 528px;
+            height: 500px;
+            margin-left: 100px;
+        }
+        .maincontent{
+            float: left;
+            width: 1060px;
+            margin-top: 100px;
+        }
+        .carousel-title{
+            width: 486px;
+            height: 36px;
+            background: url(./imgs/content-tab-bg.png) no-repeat;
+            background-size: 100% 100%;
+        }
+        .carousel-title span{
+            display: inline-block;
+            margin-left: 40px;
+            color: #fff;
+        }
+        .carousel{
+            width: 486px;
+        }
+        .right-content{
+            width: 200px;
+            height: 800px;
+            float: left;
+        }
+ 
+        .contrl{
+            position: relative;
+            height: 36px;
+            background-color: #550644;
+        }
+        .carousel-control{
+            height: 36px;
+            display: inline-block;
+            line-height: 36px;
+            background-color: #550644;
+        }
+        .carousel-control .left-arrow{
+            display: inline-block;
+            width: 9px;
+            height: 16px;
+            background: url(./imgs/ioc-pre.jpg) no-repeat;
+            background-size: 100% 100%;
+            margin-right: 10px;
+        }
+        .carousel-control .right-arrow{
+            margin-left: 10px;
+            display: inline-block;
+            width: 9px;
+            height: 16px;
+            background: url(./imgs/ioc-next.jpg) no-repeat;
+            background-size: 100% 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div class="wrap clearfix">
+        <header id="header"></header>
+        <div class="maincontent clearfix">
+            <section class="nav-left" id="sidebar"></section>
+            <section class="info">
+                 <div class="carousel-title"><span>社团服务</span></div>  
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"> 
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="./imgs/focus1.jpg" alt="...">
+                        </div>
+                        <div class="item">
+                            <img src="./imgs/focus2.jpg" alt="...">
+                        </div>
+                        <div class="item">
+                            <img src="./imgs/focus3.jpg" alt="...">
+
+                        </div>
+                        <div class="item">
+                            <img src="./imgs/focus4.jpg" alt="...">
+                        </div>
+                        <div class="contrl">
+                    <!-- Controls -->
+                            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                                <span class="left-arrow"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                                <span class="right-arrow"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="right-content"></section>
+        </div>
+        <footer id="footer"></footer>
+    </div>
+
+    <script type="text/javascript">
+        $("#header").load("./common/header.html");
+        $("#footer").load("./common/footer.html");
+        $("#sidebar").load("./common/sidebar2.html");
+        $(function(){
+});
+
+    </script>
+</body>
+</html>
